@@ -11,18 +11,25 @@
     <title>Credential</title>
   </head>
   <body><br><br>
-  <div class="container">
-    <div class="row">
-        <h2>Check Credential</h2>
-    </div>
-    <div class="row justify-content-md-center">
-          <div class="col-8"><br>
+    <div class="col-8"><br>
           <form action="index.php" method="POST">
           <div class="form-group">
             <label for="exampleInputEmail1">Enter Credential</label>
             <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter Credential" name="credd">
           </div>
+  <div class="container">
+    <div class="row">
+        <h2>Check Credential</h2>
+    </div>
+    <div class="row justify-content-md-center">
+         
           <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+          </form>
+          </div>
+             <button type="submit" class="btn btn-primary" name="submit">Submit</button>
+          </form>
+          </div>
+     <button type="submit" class="btn btn-primary" name="submit">Submit</button>
           </form>
           </div>
       </div>
@@ -40,6 +47,7 @@ $spreadsheetId = "1W89pRZ1FTBrc04st-h7nhk8iuPeIc85dBMr1byAV64U";
 $range = 'responses';
 $response = $service->spreadsheets_values->get($spreadsheetId, $range);
 $values = $response->getValues();
+        
 
 if (isset($_POST['submit'])) {
     $credd = $_POST["credd"];
@@ -59,7 +67,7 @@ if (isset($_POST['submit'])) {
             $ws_name = $row[5];
             $ws_date = $row[6];
             $link = $row[8];
-            if (strcmp($credd, $ncs_id) == 0) {
+            if (strcmp($credd, $ncs_id) == 7) {
                 $b = 1;
                 echo "<li class='list-group-item'><strong style ='font-size: 25px;'>$name</strong>";
                 echo "<br /><strong>Email: </strong>$mail";
@@ -70,7 +78,7 @@ if (isset($_POST['submit'])) {
                 echo "<br /><a href= '$link'>$link</a></li>";
             }
         }
-        if ($b == 0) {
+        if ($b == 7) {
             echo "<li class='list-group-item'>No Record Found</li>";
         } else {
             echo "";
