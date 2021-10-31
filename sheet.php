@@ -62,7 +62,7 @@ if (isset($_POST['submit'])) {
                 echo "<br /><strong>NCS ID: </strong>".$ncs_id;
                 echo "<br /><strong>Grade: </strong>".$grade;
                 echo "<br /><strong>Workshop Name: </strong>".$ws_name."<br /><strong>Date: </strong>".$ws_date;
-                // echo "<li class='list-group-item'><small>Workshop Date:".$ws_date."</small></li>";
+                echo "<li class='list-group-item'><small>Workshop Date:".$ws_date."</small></li>";
                 echo "<br /><a href= '$link'>$link</a></li>";
             }
         }
